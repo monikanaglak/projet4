@@ -37,6 +37,34 @@ const closingCard = () =>{
   openingCard();
   shutDown();
 }
+
+//function that clean up input user, problem with date in consol
+function cleaning(){
+  
+  
+  let inputs = document.querySelectorAll('input');
+  inputs.forEach(input=>{
+    input.value = '';
+    let city_chosen = document.forms.reserve.location;
+    city_chosen.forEach(c =>{
+      c.checked = false;
+    })
+    setTimeout(disappearing_message,5000)
+  })
+}
+  function disappearing_message(){
+    let mistakes = document.querySelectorAll('.mistake');
+    mistakes.forEach(mistake =>{
+      mistake.classList.add('fade-out');
+  })
+}
+
+
+
+
+
+
+
 //function that check input of user in the form
 function checkingForm(e){
   e.preventDefault();
@@ -44,45 +72,49 @@ function checkingForm(e){
   let lastname = document.getElementById("lastname").value;
   let email = document.getElementById("email").value;
   let birthdate = document.getElementById("birthdate").value;
-  let birthdate_test = document.forms.reserve.birthdate.value;
   let city = document.forms.reserve.location.value;
+  let answer;
   let number_tournoi = document.getElementById("quantity").value;
+  let turniej = parseFloat(number_tournoi);
   const  valeur_string = /^[a-zA-Z]+$/;
   const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
   let mistake_name= document.getElementById("mistake_name");
   let mistake_lastname = document.getElementById("mistake_lastname");
   let mistake_email = document.getElementById("mistake_email");
   let mistake_city = document.getElementById("mistake_city");
   let mistake_tournoi = document.getElementById("mistake_tournoi");
   let mistake_birthdate = document.getElementById("mistake_birthdate");
-  
-  if(((name.match(valeur_string)))&& ((lastname.match(valeur_string))) && (email.match(emailRegex)) && (city.length > 0) &&(number_tournoi !== ""))
+  if(((name.match(valeur_string))) && ((lastname.match(valeur_string))) && (email.match(emailRegex))  && (birthdate) && (!isNaN(turniej))) 
   {   
-    console.log(birthdate_test);
     alert("Merci ! Votre réservation a été reçue");
-
+    cleaning();
     openingCard();
   }
-  
-  else if (!name.match(valeur_string)){
-    mistake_name.textContent= "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
+  else {
+    cleaning()
+      if (!name.match(valeur_string)){
+      mistake_name.textContent= "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
+    }
+      if (!lastname.match(valeur_string)){
+      mistake_lastname.textContent= "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
+    }
+      if (!email.match(emailRegex)){
+      mistake_email.textContent= "Your email n'est pas correct";
+    }
+      if(!city){
+      mistake_city.textContent= "Vous devez choisir une option";
+    }
+      if(isNaN(turniej)){
+      mistake_tournoi.textContent = "Vous devez soumettre une chiffre";
+    
+    }
+      if(!birthdate){
+      mistake_birthdate.textContent = "Vous devez entre date de votre d'anniversaire";
+      
+    }
   }
-  else if (!lastname.match(valeur_string)){
-    mistake_lastname.textContent= "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
-  }
-  else if (!email.match(emailRegex)){
-    mistake_email.textContent= "Your input is not correct";
-  }
-  else if(city.length == 0){
-    mistake_city.textContent= "Vous devez choisir une option.";
-  }
-  else if(number_tournoi == ""){
-    mistake_tournoi.textContent = "Put a number";
-  }
-  else if(birthdate == ""){
-    mistake_birthdate.textContent = "vous devrez entre votre date d'anniversaire";
-  }
-  
+ 
 }
 
 

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <title>Reservation</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="modal.css" />
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link
       href="https://fonts.googleapis.com/css?family=DM+Sans"
@@ -12,20 +13,22 @@
     />
   </head>
   <body>
-    <div class="topnav" id="myTopnav">
-      <div class="header-logo">
-        <img alt="logo" src="Logo.png"/>
+    <header>
+      <div class="topnav" id="myTopnav">
+        <div class="header-logo">
+          <img alt="logo" src="Logo.png"/>
+        </div>
+        <div class="main-navbar">
+          <a href="#" class="active"><span>Détails de l'évènement</span></a>
+          <a href="#"><span>À propos</span></a>
+          <a href="#"><span>Contact</span></a>
+          <a href="#"><span>Évènements passés</span></a>
+          <a href="javascript:void(0);" class="icon" onclick="editNav()">
+          <i class="fa fa-bars"></i>
+          </a>
+        </div>
       </div>
-      <div class="main-navbar">
-        <a href="#" class="active"><span>Détails de l'évènement</span></a>
-        <a href="#"><span>À propos</span></a>
-        <a href="#"><span>Contact</span></a>
-        <a href="#"><span>Évènements passés</span></a>
-        <a href="javascript:void(0);" class="icon" onclick="editNav()">
-        <i class="fa fa-bars"></i>
-      </a>
-      </div>
-    </div>
+    </header>
     <main>
       <div class="hero-section">
         <div class="hero-content">
@@ -58,27 +61,27 @@
                 <label for="name">Prénom</label><br>
                 <input class="text-control" type="text" id="name" name="name" minlength="2" required/><br>
               </div>
-               <p id="mistake_name"></p> 
+               <p id="mistake_name" class="mistake"></p> 
               <div class="formData">
                 <label for="lastname">Nom</label><br>
                 <input class="text-control" type="text" id="lastname" name="lastname" minlength="2" required/><br>
               </div>
-              <p id="mistake_lastname"></p>
+              <p id="mistake_lastname" class="mistake"></p>
               <div class="formData">
                 <label for="email">E-mail</label><br>
                 <input class="text-control" type="email" id="email" name="email" required/><br>
               </div>
-              <p id="mistake_email"></p>
-              <div class="formData">
+              <p id="mistake_email" class="mistake"></p>
+              <div class="formData" >
                 <label for="birthdate">Date de naissance</label><br>
-                <input class="text-control" type="date" id="birthdate" name="birthdate" min="01-01-1900" max="01-01-2000" pattern="/^(((((0[1-9])|(1\d)|(2[0-8]))-((0[1-9])|(1[0-2])))|((31-((0[13578])|(1[02])))|((29|30)-((0[1,3-9])|(1[0-2])))))-((20[0-9][0-9]))|(29-02-20(([02468][048])|([13579][26]))))$/" required/><br>
+                <input class="text-control" type="date" id="birthdate" name="birthdate" min="1900-01-30" max="2022-13-04"  required/><br>
               </div>
-              <p id="mistake_birthdate"></p>
+              <p id="mistake_birthdate" class="mistake"></p>
               <div class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" >
               </div>
-              <p id="mistake_tournoi"></p>
+              <p id="mistake_tournoi" class="mistake"></p>
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div class="formData">
                 <input class="checkbox-input" type="radio" id="location1" name="location" value="New York"/>
@@ -106,7 +109,7 @@
                   <span class="checkbox-icon"></span>
                   Portland</label>
               </div>
-              <p id="mistake_city" style="color:red"></p>
+              <p id="mistake_city" class="mistake"></p>
               <div class="formData">
                 <input class="checkbox-input" type="checkbox" id="checkbox1" checked/>
                 <label class="checkbox2-label" for="checkbox1">
@@ -124,7 +127,6 @@
               <!--changement pour button input-->
               <button class="btn-submit" type="submit">C'est parti</button>
             </form>
-            <p style="color:red" id="mistake"></p>
           </div>
         </div>
       </div>

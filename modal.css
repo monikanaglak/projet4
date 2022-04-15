@@ -23,6 +23,7 @@ p {
   margin-bottom: 0;
   padding: 0.5vw;
 }
+/************header************************/
 img {
   padding-right: 1rem;
 }
@@ -60,7 +61,7 @@ img {
 .topnav .icon {
   display: none;
 }
-
+/*****queries for header****************/
 @media screen and (max-width: 768px) {
   .topnav a {display: none;}
   .topnav a.icon {
@@ -68,7 +69,6 @@ img {
     display: block;
   }
 }
-/*why they are separate?*/
 @media screen and (max-width: 768px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
@@ -88,6 +88,7 @@ img {
     float: right;
     display: block;
     margin-top: -15px;
+    color:red;
   }
 } 
 main {
@@ -112,7 +113,6 @@ main {
   border-radius: 1rem;
   cursor: pointer;
 }
-
 .modal-btn:hover {
   background: #3876ac;
 }
@@ -139,6 +139,7 @@ main {
 .smFont {
   font-size: 16px;
 }
+/*****formulaire background****/
 .bground{
   display: none;
   position: fixed;
@@ -150,6 +151,7 @@ main {
   overflow: auto;
   background-color: white;
 }
+/****card remerciment****/
 .card-remerciment{
   display: none;
   position: fixed;
@@ -165,7 +167,7 @@ main {
   display: block;
   animation: fade-slide-in 0.3s ease-out forwards;
 }
-
+/*****makup form et card remerciment***/
 .content, .card{
   margin: 5% auto;
   width: 100%;
@@ -196,14 +198,19 @@ main {
   padding: 15px 8%;
   margin: 15px auto;
 }
-#mistake_name, #mistake_lastname,#mistake_email, #mistake_tournoi{
+#mistake_name.mistake, #mistake_lastname.mistake,#mistake_email.mistake, #mistake_tournoi.mistake, #mistake_birthdate.mistake,
+#mistake_city.mistake {
   font-size: 12px;
   color:red;
 }
-.inside h2{
-  color:white;
-  text-align: center;
-  margin: auto;
+.fade-out {
+  animation: fadeOut 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
 }
 label {
   font-family: var(--font-default);
