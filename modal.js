@@ -1,9 +1,15 @@
 function editNav() {
   var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
+  var y = document.getElementById("myTopnavmonika");
+  if (x.className === "topnav")  {
     x.className += " responsive";
   } else {
     x.className = "topnav";
+  }
+  if (y.className === "topnav")  {
+    y.className += " responsive";
+  } else {
+    y.className = "topnav";
   }
 }
 
@@ -12,6 +18,7 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 
+// recouperation des buttons 
 const submit_form_btn = document.querySelector(".btn-submit");
 const close_card_btn = document.querySelector(".btn-close-card");
 const open_card = document.querySelector(".card-remerciment");
@@ -19,6 +26,7 @@ const close_card = document.querySelector(".x-close-card");
 
 
 // launch modal event
+
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 // launch modal form function declanche affichage formulaire
 function launchModal() {
@@ -37,21 +45,31 @@ const closingCard = () =>{
   openingCard();
   shutDown();
 }
-
+//function cleaning formulaire une fois validé/
+function monika(){
+  let inputs = document.querySelectorAll('input');
+  let city_chosen = document.forms.reserve.location;
+  inputs.forEach(input =>{
+  input.value = '';
+  });
+  city_chosen.forEach(c =>{
+  c.checked = false;
+  })
+};
 //function that clean up input user, problem with date in consol
 function cleaning(){
   
-  
+ /* 
   let inputs = document.querySelectorAll('input');
   inputs.forEach(input=>{
     input.value = '';
     let city_chosen = document.forms.reserve.location;
     city_chosen.forEach(c =>{
       c.checked = false;
-    })
+    })*/
     setTimeout(disappearing_message,5000)
-  })
-}
+  }
+/*}*/
   function disappearing_message(){
     let mistakes = document.querySelectorAll('.mistake');
     mistakes.forEach(mistake =>{
@@ -59,7 +77,10 @@ function cleaning(){
   })
 }
 
-
+//function that shows card once form is valid
+submit_form_btn.addEventListener("click", checkingForm);
+close_card_btn.addEventListener("click", closingCard);
+close_card.addEventListener("click",closingCard);
 
 
 
@@ -73,7 +94,6 @@ function checkingForm(e){
   let email = document.getElementById("email").value;
   let birthdate = document.getElementById("birthdate").value;
   let city = document.forms.reserve.location.value;
-  let answer;
   let number_tournoi = document.getElementById("quantity").value;
   let turniej = parseFloat(number_tournoi);
   const  valeur_string = /^[a-zA-Z]+$/;
@@ -85,10 +105,11 @@ function checkingForm(e){
   let mistake_city = document.getElementById("mistake_city");
   let mistake_tournoi = document.getElementById("mistake_tournoi");
   let mistake_birthdate = document.getElementById("mistake_birthdate");
-  if(((name.match(valeur_string))) && ((lastname.match(valeur_string))) && (email.match(emailRegex))  && (birthdate) && (!isNaN(turniej))) 
+
+  if(((name.match(valeur_string))) && ((lastname.match(valeur_string))) && (email.match(emailRegex))  && (birthdate) && (!isNaN(turniej)) && (city)) 
   {   
     alert("Merci ! Votre réservation a été reçue");
-    cleaning();
+    monika();
     openingCard();
   }
   else {
@@ -111,15 +132,9 @@ function checkingForm(e){
     }
       if(!birthdate){
       mistake_birthdate.textContent = "Vous devez entre date de votre d'anniversaire";
-      
     }
   }
  
 }
 
-
-//function that shows card once form is valid
-submit_form_btn.addEventListener("click", checkingForm);
-close_card_btn.addEventListener("click", closingCard);
-close_card.addEventListener("click",closingCard);
 

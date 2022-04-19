@@ -1,0 +1,112 @@
+
+@media screen and (max-width: 800px) {
+    .hero-section {
+      display: block;
+      box-shadow: unset;
+    }
+    .hero-content {
+      background: #fff;
+      color: #000;
+      padding: 20px;
+    }
+    .hero-content::after {
+      content: unset;
+    }
+    .hero-content .btn-signup {
+      display: none;
+    }
+    .hero-headline {
+      font-size: 5rem;
+      white-space: normal;
+    }
+    .hero-text {
+      width: 100%;
+      margin-top: 20px;
+      font-size: 1.5rem;
+    }
+    .hero-img img {
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    .hero-section > .btn-signup {
+      display: block;
+      margin: 32px auto 10px;
+      padding: 12px 35px;
+    }
+    .copyrights {
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .topnav a {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive {
+      overflow: hidden;
+    }
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+ 
+@media screen and (max-width: 540px) {
+  .topnav.responsive {position:relative;}
+  .topnavmonika.responsive {position:relative;}
+  
+    .hero-headline {
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 52px;
+      text-align: start;
+      min-width: 500px;
+      margin: 0 auto;
+    }
+    .hero-text {
+      font-size: 15px;
+    }
+    .hero-content {
+      min-width: 100%;
+      padding: 0;
+    }
+  }
+  @media screen and (max-width: 540px) {
+    .topnav a {display: none;}
+    .topnavmonika a {display: none;}
+    .topnav, .topnavmonika{
+      display: flex;
+      justify-content: space-between;
+    }
+    .topnav a.icon, .topnavmonika a.icon {
+      display: block;
+      color:red;
+      margin-right: 15px;
+      background: white;
+    }
+    .header-logo, .header-logomonika{
+      margin-left: 20px;
+    }
+    .header-logo img, .header-logomonika img{
+      height: 30px;
+    }
+    .bground > .monika{
+      display: block;
+      margin-top: 10px;
+    }
+    
+    
+  } 

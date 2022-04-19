@@ -1,76 +1,14 @@
-
 <!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <title>Reservation</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="css/modal.css"/>
-    <link rel="stylesheet" href="css/queries.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link
-      href="https://fonts.googleapis.com/css?family=DM+Sans"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header>
-      <div class="topnav" id="myTopnav">
-        <div class="header-logo">
-          <img alt="logo" src="Logo.png"/>
-        </div>
-        <div class="main-navbar">
-          <a href="#" class="active"><span>Détails de l'évènement</span></a>
-          <a href="#"><span>À propos</span></a>
-          <a href="#"><span>Contact</span></a>
-          <a href="#"><span>Évènements passés</span></a>
-          <a href="javascript:void(0);" class="icon" onclick="editNav()">
-          <i class="fa fa-bars"></i>
-          </a>
-        </div>
-      </div>
-    </header>
-    <main>
-      <div class="hero-section">
-        <div class="hero-content">
-          <h1 class="hero-headline">
-            Marathon national<br>
-            de jeux vidéos
-          </h1>
-          <p class="hero-text">
-            Vous aimez jouer ? Notre prochain évènement gaming est ouvert
-            aux réservations... Places limitées !
-          </p>
-          <button class="btn-signup modal-btn">
-            je m'inscris
-          </button>
-        </div>
-        <div class="hero-img">
-          <img src="./bg_img.jpg" alt="img" />
-        </div>
-        <button class="btn-signup modal-btn">
-          je m'inscris
-        </button>
-      </div>
-
-      <div class="bground">
-        <div class="monika">
-          <div class="topnavmonika" id="myTopnavmonika">
-            <div class="header-logomonika">
-              <img alt="logo" src="Logo.png"/>
-            </div>
-            <div class="main-navbarmonika">
-              <a href="#" class="active"><span>Détails de l'évènement</span></a>
-              <a href="#"><span>À propos</span></a>
-              <a href="#"><span>Contact</span></a>
-              <a href="#"><span>Évènements passés</span></a>
-              <a href="javascript:void(0);" class="icon" onclick="editNav()">
-              <i class="fa fa-bars"></i>
-              </a>
-            </div>
-          </div>
-        </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/modal.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="bground">
         <div class="content">
           <span class="close" onclick="shutDown()"></span>
           <div class="modal-body">
@@ -92,7 +30,7 @@
               <p id="mistake_email" class="mistake"></p>
               <div class="formData" >
                 <label for="birthdate">Date de naissance</label><br>
-                <input class="text-control" type="date" id="birthdate" name="birthdate" min="1900-01-30" max="2022-13-04" required/><br>
+                <input class="text-control" type="date" id="birthdate" name="birthdate" min="1900-01-30" max="2022-13-04"  required/><br>
               </div>
               <p id="mistake_birthdate" class="mistake"></p>
               <div class="formData">
@@ -148,21 +86,6 @@
           </div>
         </div>
       </div>
-      <div class="card-remerciment">
-        
-          <div class="card">
-            <span class="close x-close-card"></span>
-            <h2>Merci pour</h2>
-            <h2>votre inscription</h2>
-            <button class="btn-close-card" type="submit">Fermer</button>
-          </div>
-      </div>
-    </main>
-    <footer>
-      <p class="copyrights">
-        Copyright 2014 - 2022, GameOn Inc.
-      </p>
-    </footer>
-    <script src="modal.js"></script>
-  </body>
+ 
+</body>
 </html>
