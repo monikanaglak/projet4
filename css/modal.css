@@ -128,9 +128,7 @@
   .modal-btn:hover {
     background: #3876ac;
   }
-  .monika{
-      display:none;
-  }
+  
   /* Modal form */
   .button, .btn-close-card {
     background: #fe142f;
@@ -207,7 +205,7 @@
     margin: 15px auto;
   }
   #mistake_name.mistake, #mistake_lastname.mistake,#mistake_email.mistake, #mistake_tournoi.mistake, #mistake_birthdate.mistake,
-  #mistake_city.mistake {
+  #mistake_city.mistake, #mistake_conditions.mistake {
     font-size: 12px;
     color:red;
   }

@@ -1,14 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
     <title>Reservation</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="css/modal.css"/>
-    <link rel="stylesheet" href="css/queries.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link
       href="https://fonts.googleapis.com/css?family=DM+Sans"
       rel="stylesheet"
@@ -18,7 +20,7 @@
     <header>
       <div class="topnav" id="myTopnav">
         <div class="header-logo">
-          <img alt="logo" src="Logo.png"/>
+          <img alt="logo" src="Logo.png" />
         </div>
         <div class="main-navbar">
           <a href="#" class="active"><span>Détails de l'évènement</span></a>
@@ -26,7 +28,7 @@
           <a href="#"><span>Contact</span></a>
           <a href="#"><span>Évènements passés</span></a>
           <a href="javascript:void(0);" class="icon" onclick="editNav()">
-          <i class="fa fa-bars"></i>
+            <i class="fa fa-bars"></i>
           </a>
         </div>
       </div>
@@ -35,113 +37,202 @@
       <div class="hero-section">
         <div class="hero-content">
           <h1 class="hero-headline">
-            Marathon national<br>
+            Marathon national<br />
             de jeux vidéos
           </h1>
           <p class="hero-text">
-            Vous aimez jouer ? Notre prochain évènement gaming est ouvert
-            aux réservations... Places limitées !
+            Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux
+            réservations... Places limitées !
           </p>
-          <button class="btn-signup modal-btn">
-            je m'inscris
-          </button>
+          <button class="btn-signup modal-btn">je m'inscris</button>
         </div>
         <div class="hero-img">
           <img src="./bg_img.jpg" alt="img" />
         </div>
-        <button class="btn-signup modal-btn">
-          je m'inscris
-        </button>
+        <button class="btn-signup modal-btn">je m'inscris</button>
       </div>
 
       <div class="bground">
-        <div class="monika">
-          <div class="topnavmonika" id="myTopnavmonika">
+        <div class="formulaire">
+          <div class="topnav" id="myTopnav_formulaire">
             <div class="header-logomonika">
-              <img alt="logo" src="Logo.png"/>
+              <img alt="logo" src="Logo.png" />
             </div>
-            <div class="main-navbarmonika">
+            <div class="main-navbar">
               <a href="#" class="active"><span>Détails de l'évènement</span></a>
               <a href="#"><span>À propos</span></a>
               <a href="#"><span>Contact</span></a>
               <a href="#"><span>Évènements passés</span></a>
               <a href="javascript:void(0);" class="icon" onclick="editNav()">
-              <i class="fa fa-bars"></i>
+                <i class="fa fa-bars"></i>
               </a>
             </div>
           </div>
         </div>
         <div class="content">
           <span class="close" onclick="shutDown()"></span>
+          <!--function shutdown ferme formulaire-->
           <div class="modal-body">
             <form name="reserve" action="index.html" method="get">
               <div class="formData">
-                <label for="name">Prénom</label><br>
-                <input class="text-control" type="text" id="name" name="name" minlength="2" required/><br>
+                <label for="name">Prénom</label><br />
+                <input
+                  class="text-control"
+                  type="text"
+                  id="name"
+                  name="name"
+                  minlength="2"
+                  required
+                /><br />
               </div>
-               <p id="mistake_name" class="mistake"></p> 
+              <p id="mistake_name" class="mistake"></p>
               <div class="formData">
-                <label for="lastname">Nom</label><br>
-                <input class="text-control" type="text" id="lastname" name="lastname" minlength="2" required/><br>
+                <label for="lastname">Nom</label><br />
+                <input
+                  class="text-control"
+                  type="text"
+                  id="lastname"
+                  name="lastname"
+                  minlength="2"
+                  required
+                /><br />
               </div>
               <p id="mistake_lastname" class="mistake"></p>
+
               <div class="formData">
-                <label for="email">E-mail</label><br>
-                <input class="text-control" type="email" id="email" name="email" required/><br>
+                <label for="email">E-mail</label><br />
+                <input
+                  class="text-control"
+                  type="email"
+                  id="email"
+                  name="email"
+                  pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+                  required
+                /><br />
               </div>
               <p id="mistake_email" class="mistake"></p>
-              <div class="formData" >
-                <label for="birthdate">Date de naissance</label><br>
-                <input class="text-control" type="date" id="birthdate" name="birthdate" min="1900-01-30" max="2022-13-04" required/><br>
+
+              <div class="formData">
+                <label for="birthdate">Date de naissance</label><br />
+                <input
+                  class="text-control"
+                  type="date"
+                  id="birthdate"
+                  name="birthdate"
+                  min="1900-01-30"
+                  max="2022-13-04"
+                  keypress="myFunction(e)"
+                  required
+                /><br />
               </div>
               <p id="mistake_birthdate" class="mistake"></p>
               <div class="formData">
-                <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" >
+                <label for="quantity"
+                  >À combien de tournois GameOn avez-vous déjà participé
+                  ?</label
+                ><br />
+                <input
+                  type="number"
+                  class="text-control"
+                  id="quantity"
+                  name="quantity"
+                  pattern="/(^\d*\.?\d*[0-9]+\d*$)|(^[0-9]+\d*\.\d*$)/"
+                  required
+                />
               </div>
               <p id="mistake_tournoi" class="mistake"></p>
-              <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
+              <p class="text-label">
+                A quel tournoi souhaitez-vous participer cette année ?
+              </p>
               <div class="formData">
-                <input class="checkbox-input" type="radio" id="location1" name="location" value="New York"/>
+                <input
+                  class="checkbox-input"
+                  type="radio"
+                  id="location1"
+                  name="location"
+                  value="New York"
+                />
                 <label class="checkbox-label" for="location1">
                   <span class="checkbox-icon"></span>
-                  New York</label>
-                <input class="checkbox-input" type="radio" id="location2" name="location" value="San Francisco"/>
+                  New York</label
+                >
+                <input
+                  class="checkbox-input"
+                  type="radio"
+                  id="location2"
+                  name="location"
+                  value="San Francisco"
+                />
                 <label class="checkbox-label" for="location2">
                   <span class="checkbox-icon"></span>
-                  San Francisco</label>
-                <input class="checkbox-input" type="radio" id="location3" name="location" value="Seattle"/>
+                  San Francisco</label
+                >
+                <input
+                  class="checkbox-input"
+                  type="radio"
+                  id="location3"
+                  name="location"
+                  value="Seattle"
+                />
                 <label class="checkbox-label" for="location3">
                   <span class="checkbox-icon"></span>
-                  Seattle</label>
-                <input class="checkbox-input" type="radio" id="location4" name="location" value="Chicago"/>
+                  Seattle</label
+                >
+                <input
+                  class="checkbox-input"
+                  type="radio"
+                  id="location4"
+                  name="location"
+                  value="Chicago"
+                />
                 <label class="checkbox-label" for="location4">
                   <span class="checkbox-icon"></span>
-                  Chicago</label>
-                <input class="checkbox-input" type="radio" id="location5" name="location" value="Boston"/>
+                  Chicago</label
+                >
+                <input
+                  class="checkbox-input"
+                  type="radio"
+                  id="location5"
+                  name="location"
+                  value="Boston"
+                />
                 <label class="checkbox-label" for="location5">
                   <span class="checkbox-icon"></span>
-                  Boston</label>
-                <input class="checkbox-input" type="radio" id="location6" name="location" value="Portland"/>
+                  Boston</label
+                >
+                <input
+                  class="checkbox-input"
+                  type="radio"
+                  id="location6"
+                  name="location"
+                  value="Portland"
+                />
                 <label class="checkbox-label" for="location6">
                   <span class="checkbox-icon"></span>
-                  Portland</label>
+                  Portland</label
+                >
               </div>
               <p id="mistake_city" class="mistake"></p>
               <div class="formData">
-                <input class="checkbox-input" type="checkbox" id="checkbox1" checked/>
+                <input
+                  class="checkbox-input"
+                  type="checkbox"
+                  id="checkbox1"
+                  checked
+                />
                 <label class="checkbox2-label" for="checkbox1">
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
-                <br>
+
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
                   Je Je souhaite être prévenu des prochains évènements.
                 </label>
-                <br>
+                <br />
               </div>
+              <p id="mistake_conditions" class="mistake"></p>
               <!--changement pour button input-->
               <button class="btn-submit" type="submit">C'est parti</button>
             </form>
@@ -149,19 +240,32 @@
         </div>
       </div>
       <div class="card-remerciment">
-        
-          <div class="card">
-            <span class="close x-close-card"></span>
-            <h2>Merci pour</h2>
-            <h2>votre inscription</h2>
-            <button class="btn-close-card" type="submit">Fermer</button>
+        <div class="card_header">
+          <div class="topnav" id="myTopnav_card">
+            <div class="header-logomonika">
+              <img alt="logo" src="Logo.png" />
+            </div>
+            <div class="main-navbar">
+              <a href="#" class="active"><span>Détails de l'évènement</span></a>
+              <a href="#"><span>À propos</span></a>
+              <a href="#"><span>Contact</span></a>
+              <a href="#"><span>Évènements passés</span></a>
+              <a href="javascript:void(0);" class="icon" onclick="editNav()">
+                <i class="fa fa-bars"></i>
+              </a>
+            </div>
           </div>
+        </div>
+        <div class="card">
+          <span class="close x-close-card"></span>
+          <h2>Merci pour</h2>
+          <h2>votre inscription</h2>
+          <button class="btn-close-card" type="submit">Fermer</button>
+        </div>
       </div>
     </main>
     <footer>
-      <p class="copyrights">
-        Copyright 2014 - 2022, GameOn Inc.
-      </p>
+      <p class="copyrights">Copyright 2014 - 2022, GameOn Inc.</p>
     </footer>
     <script src="modal.js"></script>
   </body>
