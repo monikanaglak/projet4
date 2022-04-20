@@ -36,7 +36,7 @@ const close_card = document.querySelector(".x-close-card");
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 // launch modal form function declanche affichage formulaire
 function launchModal() {
-  modalbg.style.display = "block";
+modalbg.style.display = "block";
 }
 //function qui montre card remerciment, une fois formulaire est valide
 const openingCard = () => {
@@ -53,7 +53,7 @@ const closingCard = () => {
 };
 //function cleaning formulaire une fois il est validé/
 function cleaning_form() {
-  let inputs = document.querySelectorAll("input");
+  let inputs = document.querySelectorAll("input:not([type='radio'])");
   let city_chosen = document.forms.reserve.location;
   inputs.forEach((input) => {
     input.value = "";
@@ -64,16 +64,22 @@ function cleaning_form() {
 }
 //function  declanche une function qui fait disparaitre les message d'erreurs 
 function cleaning() {
+  test();
   setTimeout(disappearing_message, 5000);
- 
+
 }
 
 function disappearing_message() {
   let mistakes = document.querySelectorAll(".mistake");
    mistakes.forEach((mistake) => {
     mistake.classList.add("fade-out");
-    
-  });
+   });
+}
+function test(){
+  let mistakes = document.querySelectorAll(".mistake.fade-out");
+   mistakes.forEach((mistake) => {
+    mistake.classList.remove("fade-out");
+   });
 }
 // function qui emepche utilisateur de saisir date manuellement sans utiliser calendrier
 function myFunction(e) {
@@ -122,7 +128,6 @@ function checkingForm(e) {
   ) {
     // si tout les inputs sont correcte, message de alert, function de nettoyage de formulaire et déclanche et la card de remerciment s'ouvre
     alert("Merci ! Votre réservation a été reçue");
-    console.log(city)
     cleaning_form();
     openingCard();
   } else {
@@ -130,29 +135,52 @@ function checkingForm(e) {
     cleaning();
     if (!name.match(valeur_string)) {
       mistake_name.textContent =
-        "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
+        "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
+    }
+    else{
+      mistake_name.textContent = "";
     }
     if (!lastname.match(valeur_string)) {
       mistake_lastname.textContent =
         "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
     }
+    else{
+      mistake_lastname.textContent = "";
+    }
     if (!email.match(emailRegex)) {
-      mistake_email.textContent = "Your email n'est pas correct";
+      mistake_email.textContent = "Votre email n'est pas correct";
+    }
+    else{
+      mistake_email.textContent = "";
     }
     if (!city) {
       mistake_city.textContent = "Vous devez choisir une option";
     }
-    if (turniej < 0) {
+    else{
+      mistake_city.textContent = "";
+    }console.log(city);
+    if (Number.isNaN(turniej) || turniej < 0) {
+      
       mistake_tournoi.textContent =
-        "Vous devez soumettre une chiffre positive ou zéro";
+        "Vous devez entrer une chiffre";
+    }
+    
+    else{
+      mistake_tournoi.textContent = "";
     }
     if (!birthdate) {
       mistake_birthdate.textContent =
-        "Vous devez entre date de votre d'anniversaire";
+        "Vous devez entrer votre date de naissance";
+    }
+    else{
+      mistake_birthdate.textContent = "";
     }
     if (!conditions.checked) {
       mistake_conditions.textContent =
-        "Vous devez vérifier les conditions générale";
+        "Vous devez vérifier que vous acceptez les termes et conditions";
+    }
+    else{
+      mistake_conditions.textContent = "";
     }
   }
 }

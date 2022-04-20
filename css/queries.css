@@ -53,6 +53,10 @@
     .topnav a.icon {
       float: right;
       display: block;
+      color:red;
+    }
+    h1{
+      font-size: 36px;
     }
   }
   
