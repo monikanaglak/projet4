@@ -64,18 +64,19 @@ function cleaning_form() {
 }
 //function  declanche une function qui fait disparaitre les message d'erreurs 
 function cleaning() {
-  test();
+  removing_fade_out();
   setTimeout(disappearing_message, 5000);
 
 }
-
+//function qui fait disparaitre des messages erreurs
 function disappearing_message() {
   let mistakes = document.querySelectorAll(".mistake");
    mistakes.forEach((mistake) => {
     mistake.classList.add("fade-out");
    });
 }
-function test(){
+//function qui enleve la classe fade out aux erreurs
+function removing_fade_out(){
   let mistakes = document.querySelectorAll(".mistake.fade-out");
    mistakes.forEach((mistake) => {
     mistake.classList.remove("fade-out");
@@ -85,10 +86,14 @@ function test(){
 function myFunction(e) {
   e.preventDefault();
 }
-//function that shows card once form is valid
+//addeventlistener attachement declanchement des fucntions au clicks de utilisateur
+//declick function qui vérifie inputs de utilisateur dans formulaire
 submit_form_btn.addEventListener("click", checkingForm);
+//click sur button pour fermé card
 close_card_btn.addEventListener("click", closingCard);
+//click sur x pour fermé la card
 close_card.addEventListener("click", closingCard);
+//empecher utilisateur entre les date dans input en dors de calendrier
 const demo = document
   .getElementById("birthdate")
   .addEventListener("keypress", myFunction);
